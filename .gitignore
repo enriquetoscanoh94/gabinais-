@@ -1,0 +1,9 @@
+# Source / working files (not needed for the live site)
+fotos/
+WhatsApp Image*.jpeg
+_*.jpg
+_*.png
+
+# OS
+.DS_Store
+Thumbs.db
