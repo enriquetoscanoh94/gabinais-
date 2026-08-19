@@ -464,6 +464,91 @@ p { text-wrap: pretty; }
   color: var(--ink);
 }
 
+/* ---------- WhatsApp form ---------- */
+.wa-form {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+  display: grid;
+  gap: 1rem;
+}
+.wa-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.wa-field { display: grid; gap: .45rem; }
+.wa-field label {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--ink-2);
+}
+.wa-form input,
+.wa-form select,
+.wa-form textarea {
+  width: 100%;
+  padding: .85rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1rem;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.wa-form textarea { resize: vertical; min-height: 96px; }
+.wa-form input::placeholder,
+.wa-form textarea::placeholder { color: var(--ink-2); opacity: .7; }
+.wa-form input:focus,
+.wa-form select:focus,
+.wa-form textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(207, 46, 31, .18);
+}
+.wa-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%239a9a9a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.75rem;
+}
+.btn-wa {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  background: #25d366;
+  color: #0a1f14;
+  font-weight: 700;
+  border: none;
+}
+.btn-wa:hover { background: #1fbe5a; transform: translateY(-2px); }
+.wa-note {
+  font-size: .85rem;
+  color: var(--ink-2);
+  margin: 0;
+}
+.contact-or {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  color: var(--ink-2);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.contact-or::before,
+.contact-or::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 5.5rem);
+  height: 1px;
+  background: var(--line);
+}
+.contact-or::before { left: 0; }
+.contact-or::after { right: 0; }
+
 /* ---------- Footer ---------- */
 .site-footer { padding-block: 3rem; border-top: 1px solid var(--line); }
 .footer-inner { display: grid; gap: 1rem; justify-items: center; text-align: center; }
@@ -518,6 +603,8 @@ p { text-wrap: pretty; }
 @media (max-width: 560px) {
   .offer-list { grid-template-columns: 1fr; }
   .contact-actions { grid-template-columns: 1fr; }
+  .wa-row { grid-template-columns: 1fr; }
+  .contact-or::before, .contact-or::after { width: calc(50% - 6.5rem); }
   .slide figure { aspect-ratio: 3 / 4; }
   .car-btn { width: 44px; height: 44px; }
 

@@ -65,6 +65,21 @@ const I18N = {
     "contact.sub": "Tell us what you're painting and we'll give you a straight, competitive price. Free estimates, no obligation.",
     "contact.call": "Call or text",
     "contact.fb": "Message us on",
+    "contact.or": "or reach us directly",
+    "form.name": "Name",
+    "form.name.ph": "Your name",
+    "form.phone": "Phone",
+    "form.phone.ph": "(209) 000-0000",
+    "form.service": "Project type",
+    "form.opt.interior": "Interior painting",
+    "form.opt.exterior": "Exterior painting",
+    "form.opt.both": "Interior & exterior",
+    "form.opt.commercial": "Commercial project",
+    "form.opt.other": "Something else",
+    "form.details": "Details",
+    "form.details.ph": "Tell us a bit about the space, rooms, colors, timing…",
+    "form.send": "Send on WhatsApp",
+    "form.note": "Opens WhatsApp with your details ready to send — no account needed to fill this out.",
     "footer.area": "Central Valley, California",
     "footer.tag": "Interior & exterior · commercial & residential.",
     "cap.interior": "Interior",
@@ -104,6 +119,21 @@ const I18N = {
     "contact.sub": "Cuéntanos qué vas a pintar y te damos un precio claro y competitivo. Estimados gratis, sin compromiso.",
     "contact.call": "Llama o escribe",
     "contact.fb": "Escríbenos por",
+    "contact.or": "o contáctanos directo",
+    "form.name": "Nombre",
+    "form.name.ph": "Tu nombre",
+    "form.phone": "Teléfono",
+    "form.phone.ph": "(209) 000-0000",
+    "form.service": "Tipo de proyecto",
+    "form.opt.interior": "Pintura interior",
+    "form.opt.exterior": "Pintura exterior",
+    "form.opt.both": "Interior y exterior",
+    "form.opt.commercial": "Proyecto comercial",
+    "form.opt.other": "Otra cosa",
+    "form.details": "Detalles",
+    "form.details.ph": "Cuéntanos del espacio, cuartos, colores, fechas…",
+    "form.send": "Enviar por WhatsApp",
+    "form.note": "Abre WhatsApp con tus datos listos para enviar — no necesitas cuenta para llenarlo.",
     "footer.area": "Valle Central, California",
     "footer.tag": "Interior y exterior · comercial y residencial.",
     "cap.interior": "Interior",
@@ -122,6 +152,12 @@ function applyLang(next) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (I18N[lang][key]) el.textContent = I18N[lang][key];
+  });
+
+  // placeholders
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-ph");
+    if (I18N[lang][key]) el.placeholder = I18N[lang][key];
   });
 
   // toggle button state
@@ -257,3 +293,33 @@ update();
 
 // apply saved / default language last (captions now exist)
 applyLang(lang);
+
+/* ===========================================================
+   WhatsApp form → opens chat with a pre-filled message
+   =========================================================== */
+const WA_NUMBER = "12096899040"; // (209) 689-9040
+const waForm = document.getElementById("waForm");
+if (waForm) {
+  waForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const t = I18N[lang];
+    const name = document.getElementById("waName").value.trim();
+    const phone = document.getElementById("waPhone").value.trim();
+    const serviceSel = document.getElementById("waService");
+    const service = t["form.opt." + serviceSel.value] || serviceSel.value;
+    const details = document.getElementById("waMsg").value.trim();
+
+    const intro = lang === "es"
+      ? "Hola Gabinais Painting, me gustaría una cotización."
+      : "Hi Gabinais Painting, I'd like a free estimate.";
+
+    const lines = [intro, ""];
+    if (name) lines.push(`${t["form.name"]}: ${name}`);
+    if (phone) lines.push(`${t["form.phone"]}: ${phone}`);
+    lines.push(`${t["form.service"]}: ${service}`);
+    if (details) lines.push(`${t["form.details"]}: ${details}`);
+
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(url, "_blank", "noopener");
+  });
+}

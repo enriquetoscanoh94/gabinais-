@@ -179,6 +179,47 @@
         <p class="reveal" data-i18n="contact.sub">Tell us what you're painting and we'll give you a straight, competitive
           price. Free estimates, no obligation.</p>
 
+        <form class="wa-form reveal" id="waForm" novalidate>
+          <div class="wa-row">
+            <div class="wa-field">
+              <label for="waName" data-i18n="form.name">Name</label>
+              <input type="text" id="waName" name="name" autocomplete="name" required
+                     placeholder="Your name" data-i18n-ph="form.name.ph" />
+            </div>
+            <div class="wa-field">
+              <label for="waPhone" data-i18n="form.phone">Phone</label>
+              <input type="tel" id="waPhone" name="phone" autocomplete="tel"
+                     placeholder="(209) 000-0000" data-i18n-ph="form.phone.ph" />
+            </div>
+          </div>
+
+          <div class="wa-field">
+            <label for="waService" data-i18n="form.service">Project type</label>
+            <select id="waService" name="service">
+              <option value="interior" data-i18n="form.opt.interior">Interior painting</option>
+              <option value="exterior" data-i18n="form.opt.exterior">Exterior painting</option>
+              <option value="both" data-i18n="form.opt.both">Interior &amp; exterior</option>
+              <option value="commercial" data-i18n="form.opt.commercial">Commercial project</option>
+              <option value="other" data-i18n="form.opt.other">Something else</option>
+            </select>
+          </div>
+
+          <div class="wa-field">
+            <label for="waMsg" data-i18n="form.details">Details</label>
+            <textarea id="waMsg" name="details" rows="3"
+                      placeholder="Tell us a bit about the space, rooms, colors, timing…"
+                      data-i18n-ph="form.details.ph"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-wa">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.42 9.42 0 0 1 14.64-11.6 9.36 9.36 0 0 1 2.76 6.66c0 5.19-4.23 9.36-9.42 9.36zM20.5 3.49A11.3 11.3 0 0 0 12.05.01C5.85.01.81 5.05.81 11.24c0 1.98.52 3.92 1.5 5.63L.72 23l6.28-1.65a11.24 11.24 0 0 0 5.05 1.21h.01c6.2 0 11.24-5.04 11.24-11.24 0-3-1.17-5.82-3.29-7.83z"/></svg>
+            <span data-i18n="form.send">Send on WhatsApp</span>
+          </button>
+          <p class="wa-note" data-i18n="form.note">Opens WhatsApp with your details ready to send — no account needed to fill this out.</p>
+        </form>
+
+        <div class="contact-or reveal"><span data-i18n="contact.or">or reach us directly</span></div>
+
         <div class="contact-actions reveal">
           <a href="tel:+12096899040" class="contact-card">
             <span class="contact-ico" aria-hidden="true">
