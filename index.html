@@ -39,6 +39,7 @@
 
       <nav class="nav" aria-label="Main">
         <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#beforeafter" data-i18n="nav.ba">Before &amp; After</a>
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -144,6 +145,88 @@
         <div class="carousel-foot wrap">
           <span class="car-counter"><span id="carIndex">1</span> / <span id="carTotal">1</span></span>
           <div class="car-dots" id="dots" role="tablist" aria-label="Choose photo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Before & After ===== -->
+    <section class="section beforeafter" id="beforeafter">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="reveal" data-i18n="ba.title">Before &amp; after</h2>
+          <p class="reveal" data-i18n="ba.sub">Real projects, from tired and dated to clean and finished. Same room, same house — just repainted.</p>
+        </div>
+
+        <div class="ba-grid">
+          <article class="ba-item reveal">
+            <h3 class="ba-name" data-i18n="ba.p1">Exterior — fresh color</h3>
+            <div class="ba-pair">
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba1-antes.jpg" alt="House exterior in faded yellow before repaint" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--before" data-i18n="ba.before">Before</figcaption>
+              </figure>
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba1-despues.jpg" alt="Same house exterior repainted in a fresh salmon color" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--after" data-i18n="ba.after">After</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="ba-item reveal">
+            <h3 class="ba-name" data-i18n="ba.p2">Kitchen cabinets — gray</h3>
+            <div class="ba-pair">
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba2-antes.jpg" alt="Kitchen with dated oak cabinets before repaint" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--before" data-i18n="ba.before">Before</figcaption>
+              </figure>
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba2-despues.jpg" alt="Same kitchen with cabinets painted gray after" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--after" data-i18n="ba.after">After</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="ba-item reveal">
+            <h3 class="ba-name" data-i18n="ba.p3">Exterior — full repaint</h3>
+            <div class="ba-pair">
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba3-antes.jpg" alt="House exterior with peeling, weathered paint before" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--before" data-i18n="ba.before">Before</figcaption>
+              </figure>
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba3-despues.jpg" alt="Same house exterior freshly repainted" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--after" data-i18n="ba.after">After</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="ba-item reveal">
+            <h3 class="ba-name" data-i18n="ba.p4">Kitchen cabinets — sage green</h3>
+            <div class="ba-pair">
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba4-antes.jpg" alt="Kitchen with old wood cabinets before repaint" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--before" data-i18n="ba.before">Before</figcaption>
+              </figure>
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba4-despues.jpg" alt="Same kitchen with cabinets painted sage green after" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--after" data-i18n="ba.after">After</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="ba-item reveal">
+            <h3 class="ba-name" data-i18n="ba.p5">Exterior — door &amp; entryway</h3>
+            <div class="ba-pair">
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba5-antes.jpg" alt="Exterior door and siding with peeling paint before" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--before" data-i18n="ba.before">Before</figcaption>
+              </figure>
+              <figure class="ba-fig">
+                <img src="assets/gallery/ba5-despues.jpg" alt="Same door and entryway freshly repainted" loading="lazy" />
+                <figcaption class="ba-tag ba-tag--after" data-i18n="ba.after">After</figcaption>
+              </figure>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -255,6 +338,17 @@
       <p class="footer-copy">© <span id="year"></span> Gabinais Painting. <span data-i18n="footer.tag">Interior &amp; exterior · commercial &amp; residential.</span></p>
     </div>
   </footer>
+
+  <!-- ===== Floating call + WhatsApp ===== -->
+  <div class="float-actions" aria-label="Quick contact">
+    <a href="https://wa.me/12096899040" target="_blank" rel="noopener"
+       class="float-btn float-wa" aria-label="WhatsApp (209) 689-9040">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.42 9.42 0 0 1 14.64-11.6 9.36 9.36 0 0 1 2.76 6.66c0 5.19-4.23 9.36-9.42 9.36zM20.5 3.49A11.3 11.3 0 0 0 12.05.01C5.85.01.81 5.05.81 11.24c0 1.98.52 3.92 1.5 5.63L.72 23l6.28-1.65a11.24 11.24 0 0 0 5.05 1.21h.01c6.2 0 11.24-5.04 11.24-11.24 0-3-1.17-5.82-3.29-7.83z"/></svg>
+    </a>
+    <a href="tel:+12096899040" class="float-btn float-call" aria-label="Call (209) 689-9040">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>
+    </a>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>

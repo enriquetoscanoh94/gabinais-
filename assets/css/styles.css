@@ -387,6 +387,56 @@ p { text-wrap: pretty; }
   transform: scale(1.3);
 }
 
+/* ---------- Before & after ---------- */
+.beforeafter { background: var(--bg); }
+.ba-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
+.ba-name {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.65rem);
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+.ba-name::before {
+  content: "";
+  width: 24px; height: 2px;
+  background: var(--red);
+  flex: none;
+}
+.ba-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.ba-fig {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.ba-fig img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease);
+}
+.ba-fig:hover img { transform: scale(1.04); }
+.ba-tag {
+  position: absolute;
+  left: 0; top: 0;
+  padding: .4rem .9rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+.ba-tag--before { background: rgba(13,15,18,.8); backdrop-filter: blur(6px); }
+.ba-tag--after { background: var(--red); }
+
 /* ---------- About ---------- */
 .about-grid {
   display: grid;
@@ -561,6 +611,35 @@ p { text-wrap: pretty; }
 .footer-meta a { transition: color .2s var(--ease); }
 .footer-meta a:hover { color: var(--red); }
 .footer-copy { color: var(--ink-2); font-size: .88rem; opacity: .85; }
+
+/* ===========================================================
+   Floating call + WhatsApp buttons
+   =========================================================== */
+.float-actions {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  z-index: var(--z-header);
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.float-btn {
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.float-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0, 0, 0, .45); }
+.float-btn:active { transform: translateY(0); }
+.float-wa { background: #25d366; }
+.float-call { background: var(--red-btn); }
+
+@media (max-width: 560px) {
+  .float-btn { width: 52px; height: 52px; }
+}
 
 /* ===========================================================
    Reveal on scroll (enhances already-visible content)
